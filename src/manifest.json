@@ -1,0 +1,19 @@
+{
+    "name": "Opportunities Link Updater",
+    "version": "1.0",
+    "description": "Finding jobs in LinkedIn made easy",
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["jquery-3.6.0.min.js", "background.js"],
+        "persistent": false
+    },
+    "permissions": ["storage", "http://*/"],
+    "content_scripts": [
+        {
+            "js": ["jquery-3.6.0.min.js", "content.js" ],
+            "all_frames": true,
+            "matches": ["https://www.google.com/search?q=*&lmiaEmployerId=*"],
+            "run_at": "document_end"
+        }
+    ]
+}
